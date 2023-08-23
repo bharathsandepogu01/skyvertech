@@ -1,0 +1,50 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #017DFC;
+  --secondary-color: #292BA0;
+  --tertiary-color: #342A6D;
+  --background-color: #FAFBFF;
+  --border-color: #eaeaea;
+  --text-primary-color: #0b0b13;
+  --text-secondary-color: #555555;
+  --text-white-color: #ffffff;
+  --text-black-color: #0b0b13;
+}
+
+html {
+  font-size: $global-font-size;
+
+  @media screen and (max-width: $mobile-screen-max-width) {
+    font-size: $mobile-screen-global-font-size;
+  }
+
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: $font-size;
+  line-height: $line-height;
+  max-width: $body-max-width;
+  margin: auto;
+  background-color: var(--background-color);
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+    height: auto;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--background-color-dark);
+  }
+}
