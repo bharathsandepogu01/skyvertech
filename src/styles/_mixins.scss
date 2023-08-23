@@ -35,6 +35,22 @@
     }
 }
 
+@mixin topSection() {
+    padding: 12rem 12rem;
+    padding-bottom: 6rem;
+    background-color: var(--background-color);
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        padding: 10rem 6.4rem;
+        padding-bottom: 3.2rem;
+    }
+
+    @media screen and (max-width: $mobile-screen-max-width) {
+        padding: 10rem 3.2rem;
+        padding-bottom: 1.6rem;
+    }
+}
+
 @mixin headerContentContainer() {
     padding: 2rem 8rem;
 
@@ -42,7 +58,7 @@
         padding: 2rem 4rem;
     }
 
-    @media screen and (max-width: $mobile-menu-max-width) {
+    @media screen and (max-width: $mobile-screen-max-width) {
         padding: 1.2rem 2rem;
     }
 }
