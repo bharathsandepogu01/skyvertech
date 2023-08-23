@@ -1,0 +1,32 @@
+@import 'mixins';
+
+.contactLogosContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.iconContainer {
+    @include circle(3.6rem);
+    transition: all 0.3s linear;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logoIcon {
+        @include icon(var(--background-color));
+        height: 50%;
+        width: 50%;
+    }
+
+    &:hover {
+        background-color: var(--background-color);
+
+        .logoIcon {
+            fill: var(--primary-color);
+        }
+    }
+}
