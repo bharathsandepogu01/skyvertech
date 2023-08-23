@@ -1,0 +1,18 @@
+@import 'mixins';
+@import 'variables';
+
+.aboutUs {
+    @include section;
+
+    &>h1 {
+        margin-bottom: $margin-28;
+    }
+
+    &>h2 {
+        margin-top: $margin-28;
+    }
+
+    &>p {
+        margin-top: $margin-8;
+    }
+}
