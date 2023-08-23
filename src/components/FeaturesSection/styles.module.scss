@@ -9,6 +9,14 @@
     background-image: url('../../../public/images/featureBg.png');
     background-size: cover;
     background-position: center top;
+
+    @media only screen and (max-width: $tab-screen-max-width) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: $mobile-screen-max-width) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .featureCard {
@@ -46,7 +54,7 @@
 .content {
     grid-area: content;
 
-    & > p {
+    &>p {
         margin-top: $margin-12
-        }
+    }
 }

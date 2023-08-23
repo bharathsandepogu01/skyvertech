@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainLayout from "@components/MainLayout";
 import HeaderSection from "@components/HeaderSection";
 import FeaturesSection from "@components/FeaturesSection/FeaturesSection";
+import ScreenShotsSection from "@components/ScreenshotsSection";
 
 export const metadata: Metadata = {
   title: "Skyvertech",
@@ -13,6 +14,7 @@ export default function HomePage() {
     <MainLayout>
       <HeaderSection />
       <FeaturesSection />
+      <ScreenShotsSection />
     </MainLayout>
   );
 }

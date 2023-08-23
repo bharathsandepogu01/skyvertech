@@ -62,7 +62,7 @@ function FeaturesSection() {
         if (entry.isIntersecting) {
           setTimeout(() => {
             featureRef.classList.add(classes.showFeatureCard);
-          }, 300);
+          }, 100);
         }
       };
       const observer = new IntersectionObserver(obsCallback, obsOptions);
