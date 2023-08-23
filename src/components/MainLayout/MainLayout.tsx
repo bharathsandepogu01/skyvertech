@@ -1,14 +1,18 @@
 import React from "react";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
+import IMainLayoutProps from "./types";
 import classes from "./styles.module.scss";
 
-function MainLayout(): React.JSX.Element {
+function MainLayout(props: IMainLayoutProps) {
   return (
     <div role={"application"} className={classes.mainLayout}>
-      <header></header>
-      <main>
-        <h1>Skyvertech</h1>
-      </main>
-      <footer></footer>
+      <Header />
+      <Main>
+        {props.children}
+      </Main>
+      <Footer />
     </div>
   );
 }

@@ -3,7 +3,7 @@
 .commonTextStyles {
     color: var(--text-primary-color);
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .extraLarge {
@@ -43,15 +43,15 @@
 }
 
 .semiBold {
-    font-weight: 500;
-}
-
-.bold {
     font-weight: 600;
 }
 
+.bold {
+    font-weight: 700;
+}
+
 .light {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .white {

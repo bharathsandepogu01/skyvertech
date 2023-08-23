@@ -1,0 +1,127 @@
+@import 'mixins';
+@import 'variables';
+
+.header {
+    @include headerContentContainer;
+    min-height: 9rem;
+    background-color: var(--primary-color);
+    transition: all 0.3s linear;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 6px 0 rgba(10, 10, 10, 0.05);
+
+    a {
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+}
+
+.headerBackgroundWhite {
+    background-color: var(--background-color);
+}
+
+.logoMenuContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    @media only screen and (max-width: $mobile-screen-max-width) {
+        display: none;
+    }
+}
+
+.mobileMenu {
+    list-style: none;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    display: none;
+
+    &>li {
+        padding: $padding-12;
+    }
+
+    &>li:not(:last-child) {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    @media only screen and (max-width: $mobile-screen-max-width) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.commonHorizontalBar {
+    @include centerAbsoluteElement();
+    height: 3px;
+    background-color: var(--text-white-color);
+    transition: transform 0.3s ease, margin 0.3s ease, background-color 0.3s ease;
+}
+
+.hamBurger {
+    @include circle(5.6rem);
+    border: none;
+    padding: 0.8rem;
+    position: relative;
+    cursor: pointer;
+    display: none;
+
+    @media only screen and (max-width: $mobile-screen-max-width) {
+        display: block;
+    }
+
+    &>span {
+        @extend .commonHorizontalBar;
+        width: 50%;
+    }
+
+    &>span::before {
+        content: '';
+        @extend .commonHorizontalBar;
+        width: 100%;
+        margin-bottom: 0.8rem;
+    }
+
+    &>span::after {
+        content: '';
+        @extend .commonHorizontalBar;
+        width: 100%;
+        margin-top: 0.8rem;
+    }
+}
+
+.hamBurgerColorChange {
+    &>span {
+        background-color: var(--text-primary-color);
+    }
+
+    &>span::before {
+        background-color: var(--text-primary-color);
+    }
+
+    &>span::after {
+        background-color: var(--text-primary-color);
+    }
+}
+
+.hamBurgerActive {
+    &>span {
+        background-color: unset;
+    }
+
+    &>span::before {
+        transform: rotate(45deg);
+        margin-bottom: unset;
+    }
+
+    &>span::after {
+        transform: rotate(-45deg);
+        margin-top: unset;
+    }
+}
