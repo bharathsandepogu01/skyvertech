@@ -4,20 +4,26 @@
 .header {
     @include headerContentContainer;
     min-height: 9rem;
-    background-color: var(--primary-color);
-    transition: all 0.3s linear;
-    position: sticky;
+    background-color: none;
+    position: fixed;
+    width: 100%;
     top: 0;
-    box-shadow: 0 4px 6px 0 rgba(10, 10, 10, 0.05);
+    z-index: 999;
+    transform: all 0.1s linear;
 
     a {
         text-decoration: none;
         text-transform: capitalize;
     }
+
+    @media only screen and (max-width: $mobile-screen-max-width) {
+        min-height: 7rem; 
+    }
 }
 
 .headerBackgroundWhite {
     background-color: var(--background-color);
+    box-shadow: 0 4px 6px 0 rgba(10, 10, 10, 0.05);
 }
 
 .logoMenuContainer {
@@ -60,7 +66,7 @@
 .commonHorizontalBar {
     @include centerAbsoluteElement();
     height: 3px;
-    background-color: var(--text-white-color);
+    background-color: var(--text-primary-color);
     transition: transform 0.3s ease, margin 0.3s ease, background-color 0.3s ease;
 }
 
@@ -93,20 +99,6 @@
         @extend .commonHorizontalBar;
         width: 100%;
         margin-top: 0.8rem;
-    }
-}
-
-.hamBurgerColorChange {
-    &>span {
-        background-color: var(--text-primary-color);
-    }
-
-    &>span::before {
-        background-color: var(--text-primary-color);
-    }
-
-    &>span::after {
-        background-color: var(--text-primary-color);
     }
 }
 

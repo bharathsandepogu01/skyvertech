@@ -1,0 +1,73 @@
+@import 'variables';
+@import 'mixins';
+
+.headerSection {
+    @include topSection;
+    background-image: url("../../../public/images/headerBg.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.4rem;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        flex-direction: column;
+    }
+}
+
+.contentContainer {
+    max-width: 600px;
+    width: 100%;
+
+    opacity: 0;
+    transform: translate(10%, 0);
+    transition: 1s opacity ease, 1s transform ease;
+
+    &>h1 {
+        margin-bottom: $margin-24;
+    }
+
+    &>p {
+        margin-bottom: $margin-32;
+    }
+}
+
+.showContentContainer {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.imageContainer {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    transform: translate(-10%, 0);
+    transition: 1s opacity ease, 1s transform ease;
+
+    .imageWrapper {
+        position: relative;
+        height: 600px;
+        width: 500px;
+
+        @media screen and (max-width: $tab-screen-max-width) {
+            height: 75vw;
+            width: 50vw;
+        }
+
+        @media screen and (max-width: $mobile-screen-max-width) {
+            height: 100vw;
+            width: 80vw;
+        }
+    }
+}
+
+.showImageContainer {
+    opacity: 1;
+    transform: translate(0, 0);
+}

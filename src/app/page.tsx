@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import MainLayout from "@components/MainLayout";
+import HeaderSection from "@components/HeaderSection";
 
 export const metadata: Metadata = {
   title: "Skyvertech",
@@ -7,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <MainLayout></MainLayout>;
+  return <MainLayout><HeaderSection/></MainLayout>;
 }

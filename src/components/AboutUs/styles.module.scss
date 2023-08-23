@@ -2,7 +2,7 @@
 @import 'variables';
 
 .aboutUs {
-    @include section;
+    @include topSection;
 
     &>h1 {
         margin-bottom: $margin-28;

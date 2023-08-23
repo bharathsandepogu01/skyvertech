@@ -8,7 +8,6 @@ import Text from "@components/Text";
 import classes from "./styles.module.scss";
 
 function Header() {
-  const prevScrollYRef = React.useRef<number>(0);
   const [changeBg, setChangeBg] = React.useState(false);
   const [openMobileMenu, setOpenMobileMenu] = React.useState(false);
 
@@ -16,13 +15,11 @@ function Header() {
     function eventCallback(e: Event) {
       const currScrollY = window.scrollY;
 
-      if (currScrollY > prevScrollYRef.current && currScrollY > 100) {
+      if (currScrollY > 0) {
         setChangeBg(true);
       } else {
         setChangeBg(false);
       }
-
-      prevScrollYRef.current = currScrollY;
     }
 
     window.addEventListener("scroll", eventCallback);
@@ -40,24 +37,14 @@ function Header() {
     <>
       <li>
         <Link href={"/about-us"}>
-          <Text
-            variant="span"
-            small
-            semiBold
-            white={!openMobileMenu && !changeBg}
-          >
+          <Text variant="span" small semiBold>
             About Us
           </Text>
         </Link>
       </li>
       <li>
         <Link href={"/privacy-policy"}>
-          <Text
-            variant="span"
-            small
-            semiBold
-            white={!openMobileMenu && !changeBg}
-          >
+          <Text variant="span" small semiBold>
             Privacy Policy
           </Text>
         </Link>
@@ -73,14 +60,13 @@ function Header() {
       )}
     >
       <div className={classes.logoMenuContainer}>
-        <Logo whiteText={!openMobileMenu && !changeBg} />
+        <Logo />
         <ul className={classes.menu} role={"menu"}>
           {menuLinks}
         </ul>
         <div
           className={clsx(
             classes.hamBurger,
-            (changeBg || openMobileMenu) && classes.hamBurgerColorChange,
             openMobileMenu && classes.hamBurgerActive
           )}
           role={"button"}
