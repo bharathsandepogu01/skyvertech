@@ -6,14 +6,12 @@ import Image from "next/image";
 const data = {
   header: "Screenshots",
   imagePaths: [
-    "/images/screenshots/1.jpg",
-    "/images/screenshots/2.jpg",
-    "/images/screenshots/3.jpg",
-    "/images/screenshots/4.jpg",
-    "/images/screenshots/5.jpg",
-    "/images/screenshots/6.jpg",
-    "/images/screenshots/7.jpg",
-    "/images/screenshots/8.jpg",
+    "/images/screenshots/s1.jpg",
+    "/images/screenshots/s2.jpg",
+    "/images/screenshots/s3.jpg",
+    "/images/screenshots/s4.jpg",
+    "/images/screenshots/s5.jpg",
+    "/images/screenshots/s6.jpg",
   ],
 };
 
